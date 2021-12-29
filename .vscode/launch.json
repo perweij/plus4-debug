@@ -1,0 +1,31 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "cc65-vice",
+            "request": "launch",
+            "name": "CC65 Vice Launch",
+            "program": "${workspaceFolder}/program.plus4",
+            "debugFile": "${workspaceFolder}/program.plus4.dbg",
+            "mapFile": "${workspaceFolder}/program.plus4.map",
+            "build": {
+                "cwd": "${workspaceFolder}",
+                "command": "make",
+                "skip": false,
+                "args": [
+                    "OPTIONS=mapfile,labelfile,debugfile,debugtables"
+                ]
+            },
+            "emulatorArgs": [
+                "-model",
+                "plus4pal",
+                "-directory",
+                "~/.vscode-oss/extensions/entan-gl.cc65-vice-5.1.2/dist/system",
+            ],
+            "stopOnEntry": false
+        }
+    ]
+}
